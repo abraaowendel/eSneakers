@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <title>iSneakers</title>
+    <link rel="stylesheet" href="/./assets/css/main.css">
+    <title>eSneakers</title>
 </head>
 <body>
     <header>
         <div class="left-side">
-            <h5 id="logo">iSneakers</h5>
+            <h5 id="logo">eSneakers</h5>
             <nav>
                 <ul class="menu">
                     <li>Homem</li>
@@ -25,13 +25,102 @@
         </div>
         <div class="right-side">
             <div class="cart">
-                <img src="../assets/images/icon-cart.svg" alt="">
+                <img src="/./assets/icons/icon-cart.svg" alt="">
+                <span id="cart__amount">2</span>
             </div>
             <div class="person">
-                <img src="../assets/images/perfil.jpg" alt="">
+                <img src="/./assets/images/image-perfil.jpg" alt="">
             </div>
         </div>
     </header>
+    <main>
+        <div class="container">
+            <section class="product">
+                <div class="product__side-left">
+                    <div class="product__main-image">
+                        <img src="/./assets/images/image-product-1.jpg" alt="">
+                    </div>
+                    <div class="product__images-thumbnail">
+                        <div class="product__image-thumbnail active">
+                            <img src="/./assets/images/image-product-1-thumbnail.jpg" alt="">
+                        </div>
+                        <div class="product__image-thumbnail">
+                            <img src="/./assets/images/image-product-2-thumbnail.jpg" alt="">
+                        </div>
+                        <div class="product__image-thumbnail">
+                            <img src="/./assets/images/image-product-3-thumbnail.jpg" alt="">
+                        </div>
+                        <div class="product__image-thumbnail">
+                            <img src="/./assets/images/image-product-4-thumbnail.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="product__side-right">
+                    <div class="product__description">
+                        <div class="product__description-company">eSNEAKERS COMPANY</div>
+                        <div class="product__description-edition">
+                            <h1>eSneakers de edição limitada de outono</h1>
+                        </div>
+                        <div class="product__description-text">
+                            Os eSneakers de perfil baixo são o seu companheiro de roupa casual perfeito. 
+                            Com uma sola exterior de borracha durável, 
+                            eles resistirão a tudo o que o clima pode oferecer.
+                        </div>
+                        <div class="product_description-values">
+                            <div class="product__description-price">$125.00</div>
+                            <div class="product__description--old-price">$250.00</div>
+                        </div>
+                        
+                    </div>
+                    <div class="product__add-cart">
+                        <div class="product__add-cart--btns">
+                            <div class="product__add-cart--btnDown">
+                                <img src="/./assets/icons/icon-minus.svg" alt="">
+                            </div>                    
+                            <div class="product__add-cart--amount">0</div>
+                            <div class="product__add-cart--btnUp">
+                                <img src="/./assets/icons/icon-plus.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="product__add-cart--button">
+                            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#000000" fill-rule="nonzero"/></svg>
+                            Adicionar ao carrinho
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="modal">
+            <div class="modal__content">
+                <div class="modal__image">
+                    <div class="modal__close">
+                        <img src="/./assets/icons/icon-close.svg" alt="">
+                    </div>
+                    <div class="modal__arrow-previous">
+                        <img src="/./assets/icons/icon-previous.svg" alt="">
+                    </div>
+                    <img src="/./assets/images/image-product-1.jpg" alt="" class="modal__image-actual">
+                    <div class="modal__arrow-next">
+                        <img src="/./assets/icons/icon-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="modal__images-thumbnail">
+                    <div class="modal__image-thumbnail active">
+                        <img src="/./assets/images/image-product-1-thumbnail.jpg" alt="">
+                    </div>
+                    <div class="modal__image-thumbnail">
+                        <img src="/./assets/images/image-product-2-thumbnail.jpg" alt="">
+                    </div>
+                    <div class="modal__image-thumbnail">
+                        <img src="/./assets/images/image-product-3-thumbnail.jpg" alt="">
+                    </div>
+                    <div class="modal__image-thumbnail">
+                        <img src="/./assets/images/image-product-4-thumbnail.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="./src/pages/index.html"></script>
 </body>
 </html>

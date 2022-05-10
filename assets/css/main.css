@@ -1,0 +1,305 @@
+:root{
+    --orange-color: hsl(26, 100%, 55%);
+    --pale-color: hsl(25, 100%, 94%);
+    --blue-color: hsl(220, 13%, 13%);
+    --dark--blue-color: hsl(219, 9%, 45%);
+    --gray-blue--color: hsl(220, 14%, 75%);
+    --light-gray--color: hsl(223, 64%, 98%);
+    --white-color: hsl(0, 0%, 100%);
+    --black-color:(with 75% opacity for lightbox background): hsl(0, 0%, 0%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body,html{
+    position: relative;
+    overflow-x: hidden;
+}
+/*       */
+header,
+main{
+    margin: auto;
+}
+main{
+    max-width: 950px;
+    padding: 80px 0;
+}
+/*       */
+
+/* HEADER */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--light-gray--color);
+    height: 80px;
+    max-width: 1100px;
+}
+/* LEFT SIDE */
+.left-side{
+}
+.menu{
+    display: flex;
+    font-weight: 700;
+    color: var(--dark--blue-color);
+    letter-spacing: 1px;
+    height: 100%;
+
+}
+.menu li{
+    border-bottom: 3px solid transparent;
+    padding: 35px 15px 25px;
+    cursor: pointer;
+}
+.menu li:hover{
+    border-color: var(--orange-color);
+}
+#logo{
+    font-size: 26px;
+    margin-right: 45px;
+}
+
+/*       */
+
+.left-side,
+.right-side{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 30px 0;
+}
+
+/* RIGHT-SIDE */
+.person{
+    border: 2px solid var(--orange-color);
+    width: 45px;
+    height: 45px;
+    margin-left: 30px;
+}
+.cart{
+    position: relative;
+    cursor: pointer;
+}
+#cart__amount{
+    position: absolute;
+    top: -12px;
+    right: -2px;
+    font-size: 0.5em;
+    font-weight: 700;
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    border-radius: 5px;
+    padding: 2px 5px;
+    min-width: 20px;
+    text-align: center;
+}
+.person img{
+    width: 100%;
+    height: 100%;
+}
+.person,
+.person img{
+    border-radius: 50%;
+}
+/*           */
+
+/* CONTAINER */
+.container{
+}
+/* IMAGENS DOS PRODUTOS */
+.product__side-left{
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+}
+.product{
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+}
+.product__images-thumbnail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.product__image-thumbnail img,
+.modal__images-thumbnail img{
+    border-radius: 8px;
+}
+.product__image-thumbnail,
+.modal__image-thumbnail,
+.product__main-image img{
+    cursor: pointer;   
+    border-radius: 12px;
+}
+.product__image-thumbnail,
+.modal__image-thumbnail{
+    border: 4px solid transparent;
+    height: 81px;
+    width: 81px;
+}
+.product__image-thumbnail.active,
+.modal__image-thumbnail.active{
+    border-color: var(--orange-color);
+    
+}
+.product__image-thumbnail.active > img{
+    opacity: 0.8;
+}
+/*           */
+/* DESCRIPTION */
+.product__side-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.product__description-company{
+    letter-spacing: 2px;
+    color: var(--orange-color);
+    font-weight: 700;
+}
+.product__description-edition{
+    margin: 15px 0;
+    font-size: 1.7em;
+    color:var(--black-color);
+}
+.product__description-text{
+    font-size: 1.1em;
+    color: var(--dark--blue-color);
+    margin: 20px 0 25px;
+}
+.product__description-price{
+    font-weight: 700;
+    font-size: 2em;
+}
+.product__description-price::after{
+    content: '50%';
+    position: absolute;
+    font-size: 0.5em;
+    color: var(--orange-color);
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: 1px solid var(--pale-color);
+    border-radius: 10px;
+}
+.product__description--old-price{
+    font-weight: 700;
+    color: var(--dark--blue-color);
+    text-decoration: line-through;
+    margin: 5px 0 20px;
+}
+/*       */
+/*  CARRINHO     */
+.product__add-cart{
+    display: flex;
+    width: 100%;
+}
+.product__add-cart--btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:var(--light-gray--color);
+    padding: 12px 20px;
+    width: 200px;
+    margin-right: 20px;
+    border: 5px solid var(--black-color);
+    border-radius: 10px;
+}
+.product__add-cart--btnUp,
+.product__add-cart--btnDown{
+    cursor: pointer;
+    user-select: none;
+}
+.product__add-cart--button{
+    background-color: var(--orange-color);
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s all ease;
+}
+.product__add-cart--button:hover{
+    background-color: var(--dark--blue-color);
+}
+.product__add-cart--button svg{
+    margin-right: 10px;
+}
+.product__add-cart--button path{
+    fill: #fff;
+}
+
+/*       */
+
+/* MODAL */
+.modal{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color:  rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.modal__content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: auto;
+    height: 90%;
+}
+
+.modal__close,
+.modal__arrow-previous,
+.modal__arrow-next{
+    position: absolute;
+}
+.modal__close{
+    top: 40px;
+    right: 0;
+    cursor: pointer;
+}
+.modal__arrow-next{
+    right: -20px;
+}
+.modal__arrow-previous{
+    left: -20px;
+}
+.modal__arrow-previous,
+.modal__arrow-next{
+    top: 260px;
+    border-radius: 30px;
+    padding: 15px 18px;
+    background-color: var(--white-color);
+    cursor: pointer;
+    transition: .3s all ease;
+}
+.modal__arrow-previous:hover,
+.modal__arrow-next:hover{
+    background-color: var(--orange-color);
+}
+.modal__image-actual{
+    border-radius: 12px;
+}
+.modal__images-thumbnail{
+    display: flex;
+    margin-top: 10px;
+}
+.modal__image-thumbnail{
+    margin: 0 2px;
+}
