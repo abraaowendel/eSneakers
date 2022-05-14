@@ -1,7 +1,8 @@
 const container = document.querySelector('.container')
 const clickImage = document.querySelector('.image-actual')
+
 clickImage.addEventListener('click', () => {
-    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if(width > 992){
         // APARECER MODAL
         const modal = document.createElement('div');
@@ -22,16 +23,16 @@ clickImage.addEventListener('click', () => {
                 </div>
                 <div class="images-thumbnail">
                     <div class="image-thumbnail active">
-                        <img src="/./assets/images/image-product-1-thumbnail.jpg" alt="">
+                        <img src="/./assets/images/image-product-1-thumbnail.jpg" alt="" data-number="0">
                     </div>
                     <div class="image-thumbnail">
-                        <img src="/./assets/images/image-product-2-thumbnail.jpg" alt="">
+                        <img src="/./assets/images/image-product-2-thumbnail.jpg" alt="" data-number="1">
                     </div>
                     <div class="image-thumbnail">
-                        <img src="/./assets/images/image-product-3-thumbnail.jpg" alt="">
+                        <img src="/./assets/images/image-product-3-thumbnail.jpg" alt="" data-number="2">
                     </div>
                     <div class="image-thumbnail">
-                        <img src="/./assets/images/image-product-4-thumbnail.jpg" alt="">
+                        <img src="/./assets/images/image-product-4-thumbnail.jpg" alt="" data-number="3">
                     </div>
                 </div>
             </div>`
@@ -47,29 +48,33 @@ clickImage.addEventListener('click', () => {
 
         let current = 0;
         const changeImage = () =>{
-            if(current === 4){
-                current = 0;
-            }
-            else if (current === -1){
-                current = 3;
-            }
+            current === 4? current = 0 : current === -1? current = 3:''
+             
+            const imageMainActual = document.querySelectorAll('.image-actual')
+            .forEach((imagesMain) =>{
 
-            const imageMainActual = document.querySelectorAll('.image-actual').forEach((imagesMain) =>{
-                imagesMain.src = data[current].imageMain;
+                imagesMain.src = data.images[current].imageMain;
 
-                const imageModalThumbnailActual = document.querySelectorAll('.modal .image-thumbnail')
-                const imageProductThumbnailActual = document.querySelectorAll('.product .image-thumbnail')
+                const changeImageThumbnail = () =>{        
+                    const removeBorderImage = () => {
+                        document.querySelectorAll('.image-thumbnail').forEach((items) =>{
+                            items.classList.remove('active')
+                        }) 
+                    }
+                    const addBorderImage = () =>{
+                        const imageModalThumbnailActual = document.querySelectorAll('.modal .image-thumbnail')
+                        const imageProductThumbnailActual = document.querySelectorAll('.product .image-thumbnail')
 
-                document.querySelectorAll('.image-thumbnail').forEach((items) =>{
-                    items.classList.remove('active')
-                })
-                    
-                imageModalThumbnailActual[current].classList.add('active')
-                imageProductThumbnailActual[current].classList.add('active')
+                        imageModalThumbnailActual[current].classList.add('active')
+                        imageProductThumbnailActual[current].classList.add('active')
+                    }
 
+                    removeBorderImage();
+                    addBorderImage();
+                }
+
+                changeImageThumbnail();
             })
-
-          
         }
         
         arrowNext.addEventListener('click', () =>{
@@ -80,6 +85,16 @@ clickImage.addEventListener('click', () => {
             current--
             changeImage();
         })
+
+        document.querySelectorAll('.modal .image-thumbnail')
+        .forEach((items) => items.addEventListener('click', (item) =>{
+            let tapTheThumbnail = item.target.getAttribute('data-number')
+            if(current != tapTheThumbnail){
+                current = tapTheThumbnail;
+                changeImage();
+            } 
+        }))
+        
     }
 })  
 
