@@ -13,6 +13,11 @@
 <body>
     <header>
         <div class="left-side">
+            <div class="menu__mobile">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
             <h5 id="logo">eSneakers</h5>
             <nav>
                 <ul class="menu">
@@ -26,7 +31,7 @@
         <div class="right-side">
             <div class="cart">
                 <img src="/./assets/icons/icon-cart.svg" alt="">
-                <span id="cart__amount">2</span>
+                <span id="cart__amount">0</span>
             </div>
             <div class="person">
                 <img src="/./assets/images/image-perfil.jpg" alt="">
@@ -38,19 +43,25 @@
             <section class="product">
                 <div class="product__side-left">
                     <div class="product__main-image">
-                        <img src="/./assets/images/image-product-1.jpg" alt="">
+                        <div class="arrow-previous">
+                            <img src="/./assets/icons/icon-previous.svg" alt="">
+                        </div>
+                        <img src="/./assets/images/image-product-1.jpg" alt="" class="image-actual">
+                        <div class="arrow-next">
+                            <img src="/./assets/icons/icon-next.svg" alt="">
+                        </div>
                     </div>
-                    <div class="product__images-thumbnail">
-                        <div class="product__image-thumbnail active">
+                    <div class="images-thumbnail">
+                        <div class="image-thumbnail active">
                             <img src="/./assets/images/image-product-1-thumbnail.jpg" alt="">
                         </div>
-                        <div class="product__image-thumbnail">
+                        <div class="image-thumbnail">
                             <img src="/./assets/images/image-product-2-thumbnail.jpg" alt="">
                         </div>
-                        <div class="product__image-thumbnail">
+                        <div class="image-thumbnail">
                             <img src="/./assets/images/image-product-3-thumbnail.jpg" alt="">
                         </div>
-                        <div class="product__image-thumbnail">
+                        <div class="image-thumbnail">
                             <img src="/./assets/images/image-product-4-thumbnail.jpg" alt="">
                         </div>
                     </div>
@@ -90,37 +101,10 @@
                 </div>
             </section>
         </div>
-        <div class="modal">
-            <div class="modal__content">
-                <div class="modal__image">
-                    <div class="modal__close">
-                        <img src="/./assets/icons/icon-close.svg" alt="">
-                    </div>
-                    <div class="modal__arrow-previous">
-                        <img src="/./assets/icons/icon-previous.svg" alt="">
-                    </div>
-                    <img src="/./assets/images/image-product-1.jpg" alt="" class="modal__image-actual">
-                    <div class="modal__arrow-next">
-                        <img src="/./assets/icons/icon-next.svg" alt="">
-                    </div>
-                </div>
-                <div class="modal__images-thumbnail">
-                    <div class="modal__image-thumbnail active">
-                        <img src="/./assets/images/image-product-1-thumbnail.jpg" alt="">
-                    </div>
-                    <div class="modal__image-thumbnail">
-                        <img src="/./assets/images/image-product-2-thumbnail.jpg" alt="">
-                    </div>
-                    <div class="modal__image-thumbnail">
-                        <img src="/./assets/images/image-product-3-thumbnail.jpg" alt="">
-                    </div>
-                    <div class="modal__image-thumbnail">
-                        <img src="/./assets/images/image-product-4-thumbnail.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+      
     </main>
-    <script src="./src/pages/index.html"></script>
+    <script src="/src/js/JSON.js"></script>
+    <script src="/./src/js/main.js"></script>
+    <script src="/src/js/modal.js"></script>
 </body>
 </html>
