@@ -3,6 +3,7 @@ const clickImage = document.querySelector('.image-actual')
 
 clickImage.addEventListener('click', () => {
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    
     if(width > 992){
         // APARECER MODAL
         const modal = document.createElement('div');
@@ -40,62 +41,55 @@ clickImage.addEventListener('click', () => {
         // REMOVER MODAL
         const closeModal = document.querySelector('.modal__close')
         closeModal.addEventListener('click', () => container.removeChild(modal))
+
+        let current = document.querySelector('.product .image-thumbnail.active').getAttribute('data-number')
         
+        // ESSA FUNÇÃO ADICIONA BORDA NA MINIATURA ATUAL
+        const addBorderImage = (c) =>{
+            const imagesModalThumbnail = document.querySelectorAll('.modal .image-thumbnail')
+            const imagesThumbnail = document.querySelectorAll('.product .image-thumbnail')
+            imagesThumbnail[c].classList.add('active')
+            imagesModalThumbnail[c].classList.add('active')
+        }
 
-        // TROCAR IMAGEM
-        const arrowNext = document.querySelector('.modal__image .arrow-next')
-        const arrowPrevious = document.querySelector('.modal__image .arrow-previous')
-
-        let current = 0;
-        const changeImage = () =>{
-            current === 4? current = 0 : current === -1? current = 3:''
-             
-            const imageMainActual = document.querySelectorAll('.image-actual')
-            .forEach((imagesMain) =>{
-
-                imagesMain.src = data.images[current].imageMain;
-
-                const changeImageThumbnail = () =>{        
-                    const removeBorderImage = () => {
-                        document.querySelectorAll('.image-thumbnail').forEach((items) =>{
-                            items.classList.remove('active')
-                        }) 
-                    }
-                    const addBorderImage = () =>{
-                        const imageModalThumbnailActual = document.querySelectorAll('.modal .image-thumbnail')
-                        const imageProductThumbnailActual = document.querySelectorAll('.product .image-thumbnail')
-
-                        imageModalThumbnailActual[current].classList.add('active')
-                        imageProductThumbnailActual[current].classList.add('active')
-                    }
-
-                    removeBorderImage();
-                    addBorderImage();
-                }
-
-                changeImageThumbnail();
+        // ESSA FUNÇÃO REMOVE TODAS AS BORDAS DOS ELEMENTOS EM MINIATURA
+        const removeBorderImage = () =>{
+            const imagesThumbnail = document.querySelectorAll('.image-thumbnail')
+            imagesThumbnail.forEach((imageThumbnail) =>{
+                imageThumbnail.classList.remove('active')
             })
         }
-        
-        arrowNext.addEventListener('click', () =>{
-            current++
-            changeImage();
-        })
-        arrowPrevious.addEventListener('click', () =>{
-            current--
-            changeImage();
-        })
 
-        document.querySelectorAll('.modal .image-thumbnail')
-        .forEach((items) => items.addEventListener('click', (item) =>{
-            let tapTheThumbnail = item.target.getAttribute('data-number')
-            if(current != tapTheThumbnail){
-                current = tapTheThumbnail;
-                changeImage();
-            } 
-        }))
+        // ESSA FUNÇÃO MUDA A IMAGEM BASEADA NO VALOR DO CURRENT
+        const changeImages = () => {
+            if(current == 4){
+                current = 0;
+            }
+            else if(current == -1){
+                current = 3;
+            }
+            let imageMainActual = document.querySelectorAll('.image-actual')
+            imageMainActual.forEach((imageMain) =>{
+                imageMain.src = data.images[current].imageMain
+            })
+            removeBorderImage();
+            addBorderImage(current)
+        }
+
+        changeImages();
+
+        // MUDAR IMAGEM A PARTIR DE TOQUE NAS SETAS
+        const previousModal = document.querySelector('.modal .arrow-previous')
+        const nextModal = document.querySelector('.modal .arrow-next')
         
+        nextModal.addEventListener('click', () => {
+                current++ 
+                changeImages(current)
+        })
+        
+        previousModal.addEventListener('click', () => {
+            current-- 
+            changeImages(current)
+        }) 
     }
-})  
-
-
+})
