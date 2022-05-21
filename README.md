@@ -6,7 +6,7 @@
     A eSneakers é uma marca fictícia criada por mim, nela temos um modelo de tênis de edição limitada de Outono. A eSneakers é uma loja virtual que veio para revolucionar o mercado de tênis.
 </h4>
 
-<h4 align="center"><a href="https://abraaowendel.github.io/esneakers/" target="_blank">Clique para visitar o projeto</a></h4>
+<h4 align="center"><a href="https://abraaowendel.github.io/eSneakers/" target="_blank">Clique para visitar o projeto</a></h4>
 
 ## 📚 Funcionalidades
 

@@ -108,7 +108,7 @@ const createModalCart = () => {
         <div class="cart__checkout-settings">
             <div class="cart__checkout-name">Carrinho de compras</div>
             <div class="close__cart">
-                <img src="/assets/icons/icon-close.svg" alt="">
+                <img src="./assets/icons/icon-close.svg" alt="">
             </div>
         </div>
         <div class="cart__checkout-products">
