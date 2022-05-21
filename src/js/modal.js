@@ -11,29 +11,29 @@ clickImage.addEventListener('click', () => {
         modal.innerHTML = `
             <div class="modal__content">
                 <div class="modal__image">
-                    <img src="/./assets/images/image-product-1.jpg" alt="" class="image-actual">
+                    <img src="./assets/images/image-product-1.jpg" alt="" class="image-actual">
                     <div class="modal__close">
-                        <img src="/./assets/icons/icon-close.svg" alt="">
+                        <img src="./assets/icons/icon-close.svg" alt="">
                     </div>
                     <div class="arrow-previous">
-                        <img src="/./assets/icons/icon-previous.svg" alt="">
+                        <img src="./assets/icons/icon-previous.svg" alt="">
                     </div>
                     <div class="arrow-next">
-                        <img src="/./assets/icons/icon-next.svg" alt="">
+                        <img src="./assets/icons/icon-next.svg" alt="">
                     </div>
                 </div>
                 <div class="images-thumbnail">
                     <div class="image-thumbnail active">
-                        <img src="/./assets/images/image-product-1-thumbnail.jpg" alt="" data-number="0">
+                        <img src="./assets/images/image-product-1-thumbnail.jpg" alt="" data-number="0">
                     </div>
                     <div class="image-thumbnail">
-                        <img src="/./assets/images/image-product-2-thumbnail.jpg" alt="" data-number="1">
+                        <img src="./assets/images/image-product-2-thumbnail.jpg" alt="" data-number="1">
                     </div>
                     <div class="image-thumbnail">
-                        <img src="/./assets/images/image-product-3-thumbnail.jpg" alt="" data-number="2">
+                        <img src="./assets/images/image-product-3-thumbnail.jpg" alt="" data-number="2">
                     </div>
                     <div class="image-thumbnail">
-                        <img src="/./assets/images/image-product-4-thumbnail.jpg" alt="" data-number="3">
+                        <img src="./assets/images/image-product-4-thumbnail.jpg" alt="" data-number="3">
                     </div>
                 </div>
             </div>`
